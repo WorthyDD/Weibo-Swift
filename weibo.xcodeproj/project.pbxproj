@@ -19,6 +19,7 @@
 		CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29501D5F12AE00B74EA2 /* UIView+Geometry.m */; };
 		CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29521D5F12AE00B74EA2 /* UIView+IBInspect.m */; };
 		CC7E29581D5F17F500B74EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */; };
+		CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CC7E29511D5F12AE00B74EA2 /* UIView+IBInspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBInspect.h"; sourceTree = "<group>"; };
 		CC7E29521D5F12AE00B74EA2 /* UIView+IBInspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspect.m"; sourceTree = "<group>"; };
 		CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				CC7E29431D5F0B7B00B74EA2 /* MainPage */,
 				CC7E29561D5F17C900B74EA2 /* Profile */,
+				CC7E29591D5F1C7600B74EA2 /* Publish */,
 			);
 			name = Weibo;
 			sourceTree = "<group>";
@@ -194,6 +197,14 @@
 				CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		CC7E29591D5F1C7600B74EA2 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */,
+			);
+			name = Publish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */,
 				CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */,
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,

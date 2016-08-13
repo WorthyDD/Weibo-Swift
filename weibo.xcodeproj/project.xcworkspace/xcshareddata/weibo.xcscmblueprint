@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DA84B814EF84F90D43A788DDA0016F774E885F39",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BF606EBDF3315E78ADBE432953A5D9CE4697B7ED" : 0,
+    "DA84B814EF84F90D43A788DDA0016F774E885F39" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "399FF4A1-42EA-481E-9890-6C4C7D0881F4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BF606EBDF3315E78ADBE432953A5D9CE4697B7ED" : "",
+    "DA84B814EF84F90D43A788DDA0016F774E885F39" : "weibo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "weibo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "weibo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WorthyDD\/AirMonitor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BF606EBDF3315E78ADBE432953A5D9CE4697B7ED"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WorthyDD\/Weibo-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DA84B814EF84F90D43A788DDA0016F774E885F39"
+    }
+  ]
+}
