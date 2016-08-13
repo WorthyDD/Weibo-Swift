@@ -20,6 +20,7 @@
 		CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29521D5F12AE00B74EA2 /* UIView+IBInspect.m */; };
 		CC7E29581D5F17F500B74EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */; };
 		CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */; };
+		CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		CC7E29521D5F12AE00B74EA2 /* UIView+IBInspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspect.m"; sourceTree = "<group>"; };
 		CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageViewController.swift; sourceTree = "<group>"; };
+		CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		CC7E29411D5F0B4400B74EA2 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				CC7E295C1D5F2F7D00B74EA2 /* BaseVC */,
 				CC7E29431D5F0B7B00B74EA2 /* MainPage */,
 				CC7E29561D5F17C900B74EA2 /* Profile */,
 				CC7E29591D5F1C7600B74EA2 /* Publish */,
@@ -205,6 +208,14 @@
 				CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */,
 			);
 			name = Publish;
+			sourceTree = "<group>";
+		};
+		CC7E295C1D5F2F7D00B74EA2 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */,
+			);
+			name = BaseVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 			files = (
 				CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */,
 				CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */,
+				CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */,
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
 				CC7E29531D5F12AE00B74EA2 /* UIColor+TAToolkit.m in Sources */,
