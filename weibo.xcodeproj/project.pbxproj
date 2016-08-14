@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC04A76F1D60B4370005E4A8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC04A76E1D60B4370005E4A8 /* SDWebImage.framework */; };
 		CC04DE971D603A5C00E17BFB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E29691D5F4E5300B74EA2 /* Alamofire.framework */; };
 		CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */; };
+		CC0DD5671D60582600BF6FF5 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5661D60582600BF6FF5 /* ShareManager.swift */; };
+		CC0DD5691D605D1900BF6FF5 /* WeiboSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0DD5681D605D1900BF6FF5 /* WeiboSDK */; };
 		CC7E290E1D5F02C400B74EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E290D1D5F02C400B74EA2 /* AppDelegate.swift */; };
 		CC7E29151D5F02C400B74EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7E29131D5F02C400B74EA2 /* Main.storyboard */; };
 		CC7E29171D5F02C400B74EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7E29161D5F02C400B74EA2 /* Assets.xcassets */; };
@@ -48,7 +51,10 @@
 		69730370D20F3BA552388298 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
 		6B91BBB886ED851A94F45D59 /* Pods-weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.debug.xcconfig"; sourceTree = "<group>"; };
 		C6257EFFC1E5D2B4A0B8633B /* Pods_weiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC04A76E1D60B4370005E4A8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC0DD5661D60582600BF6FF5 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		CC0DD5681D605D1900BF6FF5 /* WeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WeiboSDK; path = Pods/WeiboSDK; sourceTree = "<group>"; };
 		CC7E290A1D5F02C400B74EA2 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7E290D1D5F02C400B74EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC7E29141D5F02C400B74EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC04A76F1D60B4370005E4A8 /* SDWebImage.framework in Frameworks */,
+				CC0DD5691D605D1900BF6FF5 /* WeiboSDK in Frameworks */,
 				CC04DE971D603A5C00E17BFB /* Alamofire.framework in Frameworks */,
 				DF581A9662EBBA9B46743464 /* Pods_weibo.framework in Frameworks */,
 			);
@@ -107,6 +115,8 @@
 		0ABC638E1436F677FEA95F35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC04A76E1D60B4370005E4A8 /* SDWebImage.framework */,
+				CC0DD5681D605D1900BF6FF5 /* WeiboSDK */,
 				CC7E29691D5F4E5300B74EA2 /* Alamofire.framework */,
 				D58EB6E24604342A9F640B62 /* Pods_weibo.framework */,
 				5366F9E6EB5AACDD12B8EDAB /* Pods_weiboTests.framework */,
@@ -232,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */,
+				CC0DD5661D60582600BF6FF5 /* ShareManager.swift */,
 			);
 			name = BaseVC;
 			sourceTree = "<group>";
@@ -511,6 +522,7 @@
 				CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */,
 				CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */,
 				CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */,
+				CC0DD5671D60582600BF6FF5 /* ShareManager.swift in Sources */,
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
 				CC7E29531D5F12AE00B74EA2 /* UIColor+TAToolkit.m in Sources */,
@@ -663,16 +675,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 				);
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wuxi.weibo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wuxi.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "weibo/weibo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
@@ -687,16 +702,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 				);
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wuxi.weibo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wuxi.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "weibo/weibo-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};

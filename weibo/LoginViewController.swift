@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
 
     
@@ -15,11 +16,21 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextFiled: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     
     @IBAction func didTapLogin(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true) { 
+            let request: WBAuthorizeRequest! = WBAuthorizeRequest.request() as! WBAuthorizeRequest
+//            request.redirectURI = "https://api.weibo.com/oauth2/default.html"
+            request.redirectURI = "https://www.sina.com"
+            request.scope = "all"
             
+            WeiboSDK.sendRequest(request)
         }
     }
     

@@ -1,12 +1,29 @@
 PODS:
   - Alamofire (3.4.1)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - SDWebImage (~> 3.8)
+  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+
+EXTERNAL SOURCES:
+  WeiboSDK:
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+CHECKOUT OPTIONS:
+  WeiboSDK:
+    :commit: 6031a8da4ce17867ff5887b8dfc59ea45930274e
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 3c5bde931d1507355a61352e02ff1969bed63a6c
+PODFILE CHECKSUM: 5917c312c194371cc86923f1191a270f9be558ef
 
 COCOAPODS: 1.0.1
