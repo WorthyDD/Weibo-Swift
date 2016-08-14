@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -16,8 +17,18 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
+        self.presentViewController(loginVC!, animated: true) {
+            
+        }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
