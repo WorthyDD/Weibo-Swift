@@ -68,10 +68,11 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         let message = messages[indexPath.row]
         let avatar = message.objectForKey("user")?.objectForKey("profile_image_url") as! String
         let name = message.objectForKey("user")?.objectForKey("name") as! String
-        let desc = message.objectForKey("user")?.objectForKey("description") as! String
+        let text = message.objectForKey("text") as! String
+//        let desc = message.objectForKey("user")?.objectForKey("description") as! String
         cell.iconButton.sd_setImageWithURL(NSURL(string: avatar)!, forState: UIControlState.Normal)
         cell.name.text = name
-        cell.content.text = desc
+        cell.content.text = text
         return cell;
     }
 }
