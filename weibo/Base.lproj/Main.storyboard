@@ -17,6 +17,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.99215686270000003" green="0.43137254899999999" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.99215686274509807" green="0.43137254901960786" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="uMU-Ei-YGa" kind="relationship" relationship="viewControllers" id="zNS-XK-hqb"/>
@@ -270,6 +272,9 @@
                                                             <state key="normal" title="1772" image="forward">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapRepostButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="LTO-Pq-4wW"/>
                                                             </connections>
@@ -291,7 +296,8 @@
                                                                     <exclude reference="na5-bl-PMb"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="80" y="5" width="1" height="30"/>
                                                                 <mask key="constraints">
                                                                     <include reference="C5K-ze-AQz"/>
                                                                     <include reference="na5-bl-PMb"/>
@@ -304,6 +310,9 @@
                                                             <state key="normal" title="182" image="message">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="80" y="0.0" width="80" height="40"/>
+                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapCommentButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="Pr7-i5-rAI"/>
                                                             </connections>
@@ -325,7 +334,8 @@
                                                                     <exclude reference="oTU-vS-A8n"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact">
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="159" y="5" width="1" height="30"/>
                                                                 <mask key="constraints">
                                                                     <include reference="JkV-O6-wfR"/>
                                                                     <include reference="oTU-vS-A8n"/>
@@ -338,6 +348,9 @@
                                                             <state key="normal" title="182" image="like">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="160" y="0.0" width="80" height="40"/>
+                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapLikeButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="59W-xG-3fK"/>
                                                             </connections>
@@ -428,7 +441,8 @@
                                                             <exclude reference="p1I-bY-duY"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="210" width="240" height="40"/>
                                                         <mask key="subviews">
                                                             <include reference="zfI-V6-JId"/>
                                                             <include reference="ZVU-zz-w9a"/>

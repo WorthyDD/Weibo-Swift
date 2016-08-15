@@ -14,6 +14,9 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.init(RGB: 0xfd6e37)], forState: UIControlState.Selected)
+        self.tabBar.tintColor = UIColor.init(RGB: 0xfd6e37)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -18,6 +18,20 @@ class ContentCell: UITableViewCell {
     @IBOutlet weak var commentsButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
  
+    func updateCell(message : Message){
+        let avatar = message.imgUrl
+        let userName = message.userName
+        let text = message.text
+        let repostsCount = message.repostsCount!
+        let commentsCount = message.commentsCount!
+        let attitudesCount = message.attitudesCount!
+        iconButton.sd_setImageWithURL(NSURL(string: avatar!)!, forState: UIControlState.Normal)
+        name.text = userName
+        content.text = text
+        repostsButton.setTitle(String(repostsCount), forState: UIControlState.Normal)
+        commentsButton.setTitle(String(commentsCount), forState: UIControlState.Normal)
+        likeButton.setTitle(String(attitudesCount), forState: UIControlState.Normal)
+    }
     
     @IBAction func didTapRepostButton(sender: AnyObject) {
     }
