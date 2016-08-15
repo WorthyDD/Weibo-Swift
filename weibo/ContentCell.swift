@@ -14,5 +14,17 @@ class ContentCell: UITableViewCell {
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var repostsButton: UIButton!
+    @IBOutlet weak var commentsButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+ 
     
+    @IBAction func didTapRepostButton(sender: AnyObject) {
+    }
+    
+    @IBAction func didTapCommentButton(sender: AnyObject) {
+    }
+    
+    @IBAction func didTapLikeButton(sender: AnyObject) {
+    }
 }

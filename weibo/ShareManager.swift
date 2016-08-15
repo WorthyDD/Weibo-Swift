@@ -22,4 +22,7 @@ class ShareManager: NSObject {
     private override init() {
         
     }
+    
 }
+
+

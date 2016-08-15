@@ -1,12 +1,16 @@
 PODS:
   - Alamofire (3.4.1)
+  - AlamofireObjectMapper (3.0.2):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - ObjectMapper (1.4.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
   - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
+  - AlamofireObjectMapper (~> 3.0)
   - SDWebImage (~> 3.8)
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
 
@@ -21,9 +25,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 5917c312c194371cc86923f1191a270f9be558ef
+PODFILE CHECKSUM: 4a5e25f4caf57d21a8728cffbeb58203a893fea8
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.0.0

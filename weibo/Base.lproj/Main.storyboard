@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="1183.5" y="-632"/>
         </scene>
-        <!--首页-->
+        <!--Main-->
         <scene sceneID="TVh-qj-zce">
             <objects>
                 <viewController id="2Fr-00-oBD" customClass="MainPageViewController" customModule="weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -260,9 +260,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="68" width="216" height="92"/>
-                                                    </variation>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMO-GZ-deI">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -273,9 +270,9 @@
                                                             <state key="normal" title="1772" image="forward">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                                            </variation>
+                                                            <connections>
+                                                                <action selector="didTapRepostButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="LTO-Pq-4wW"/>
+                                                            </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-zz-w9a">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -294,8 +291,7 @@
                                                                     <exclude reference="na5-bl-PMb"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="80" y="5" width="1" height="30"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="C5K-ze-AQz"/>
                                                                     <include reference="na5-bl-PMb"/>
@@ -308,9 +304,9 @@
                                                             <state key="normal" title="182" image="message">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="80" y="0.0" width="80" height="40"/>
-                                                            </variation>
+                                                            <connections>
+                                                                <action selector="didTapCommentButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="Pr7-i5-rAI"/>
+                                                            </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZa-04-V7t">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -329,8 +325,7 @@
                                                                     <exclude reference="oTU-vS-A8n"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="159" y="5" width="1" height="30"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="JkV-O6-wfR"/>
                                                                     <include reference="oTU-vS-A8n"/>
@@ -343,9 +338,9 @@
                                                             <state key="normal" title="182" image="like">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="160" y="0.0" width="80" height="40"/>
-                                                            </variation>
+                                                            <connections>
+                                                                <action selector="didTapLikeButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="59W-xG-3fK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -433,8 +428,7 @@
                                                             <exclude reference="p1I-bY-duY"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="210" width="240" height="40"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="zfI-V6-JId"/>
                                                             <include reference="ZVU-zz-w9a"/>
@@ -545,9 +539,12 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commentsButton" destination="xAk-h0-eGS" id="JG0-xV-l2v"/>
                                             <outlet property="content" destination="wSW-4o-kuz" id="z5x-Gj-P0U"/>
                                             <outlet property="iconButton" destination="MvX-xs-1Bb" id="Vb3-o2-PJb"/>
+                                            <outlet property="likeButton" destination="1zS-V6-h1l" id="jDo-Je-bX0"/>
                                             <outlet property="name" destination="ptF-Le-Ehb" id="fwO-l3-00W"/>
+                                            <outlet property="repostsButton" destination="zfI-V6-JId" id="Hwv-uV-kTF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -587,7 +584,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="Joo-Wt-ZZ9">
+                    <navigationItem key="navigationItem" title="Main" id="Joo-Wt-ZZ9">
                         <barButtonItem key="rightBarButtonItem" image="edit" id="vin-TY-vi8">
                             <color key="tintColor" red="1" green="0.46754895670000002" blue="0.406071185" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -604,7 +601,7 @@
             </objects>
             <point key="canvasLocation" x="960" y="135"/>
         </scene>
-        <!--发布动态-->
+        <!--publish-->
         <scene sceneID="MpP-Lp-eyG">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Wsh-Ns-n4p" customClass="PublishMessageViewController" customModule="weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -617,14 +614,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="发布动态" id="dST-GW-lvA"/>
+                    <navigationItem key="navigationItem" title="publish" id="dST-GW-lvA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXN-eu-Rdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960" y="824"/>
         </scene>
-        <!--个人中心-->
+        <!--Pofile-->
         <scene sceneID="mbd-Dr-qnR">
             <objects>
                 <viewController id="KRd-gg-tJC" customClass="ProfileViewController" customModule="weibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -706,7 +703,7 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-pB-PtL">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="statuses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-pB-PtL">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -758,7 +755,7 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsm-vI-EMJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsm-vI-EMJ">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -810,7 +807,7 @@
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab0-kV-ZTS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab0-kV-ZTS">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1058,23 +1055,26 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="个人中心" id="ZAY-Yb-jqy"/>
+                    <navigationItem key="navigationItem" title="Pofile" id="ZAY-Yb-jqy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bio" destination="rCY-eu-dra" id="xfp-nn-dhh"/>
+                        <outlet property="followersCountLabel" destination="wiX-gz-lAO" id="G3q-a3-xry"/>
+                        <outlet property="friendsCountLabel" destination="Zft-p1-xrR" id="TxZ-IY-IOd"/>
                         <outlet property="iconButton" destination="cme-i5-Fgn" id="rZH-iP-DM4"/>
                         <outlet property="name" destination="Vqn-2k-6fE" id="XMh-zj-O20"/>
+                        <outlet property="statusesLabel" destination="IG2-kB-eAd" id="Jwg-GF-p95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyt-Zh-NGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2874" y="156"/>
         </scene>
-        <!--首页-->
+        <!--home-->
         <scene sceneID="lat-de-r50">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMU-Ei-YGa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="tab-home" id="lUO-XC-z9O"/>
+                    <tabBarItem key="tabBarItem" title="home" image="tab-home" id="lUO-XC-z9O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jEb-DM-3OA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1089,11 +1089,11 @@
             </objects>
             <point key="canvasLocation" x="162" y="135"/>
         </scene>
-        <!--我-->
+        <!--me-->
         <scene sceneID="BEd-Ef-ohK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b7r-ak-yGD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="tab-profile" id="y7w-z8-Nlb"/>
+                    <tabBarItem key="tabBarItem" title="me" image="tab-profile" id="y7w-z8-Nlb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jc6-LA-w6o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
