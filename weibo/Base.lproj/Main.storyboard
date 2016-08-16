@@ -263,6 +263,25 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-ma-6b0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="63" id="Hck-wW-qHx">
+                                                            <variation key="widthClass=compact" constant="50"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Hck-wW-qHx"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Hck-wW-qHx"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMO-GZ-deI">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <subviews>
@@ -272,9 +291,6 @@
                                                             <state key="normal" title="1772" image="forward">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapRepostButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="LTO-Pq-4wW"/>
                                                             </connections>
@@ -296,8 +312,7 @@
                                                                     <exclude reference="na5-bl-PMb"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="80" y="5" width="1" height="30"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="C5K-ze-AQz"/>
                                                                     <include reference="na5-bl-PMb"/>
@@ -310,9 +325,6 @@
                                                             <state key="normal" title="182" image="message">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="80" y="0.0" width="80" height="40"/>
-                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapCommentButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="Pr7-i5-rAI"/>
                                                             </connections>
@@ -334,8 +346,7 @@
                                                                     <exclude reference="oTU-vS-A8n"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="159" y="5" width="1" height="30"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="JkV-O6-wfR"/>
                                                                     <include reference="oTU-vS-A8n"/>
@@ -348,9 +359,6 @@
                                                             <state key="normal" title="182" image="like">
                                                                 <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="160" y="0.0" width="80" height="40"/>
-                                                            </variation>
                                                             <connections>
                                                                 <action selector="didTapLikeButton:" destination="TcE-qs-X2t" eventType="touchUpInside" id="59W-xG-3fK"/>
                                                             </connections>
@@ -441,8 +449,7 @@
                                                             <exclude reference="p1I-bY-duY"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="210" width="240" height="40"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="zfI-V6-JId"/>
                                                             <include reference="ZVU-zz-w9a"/>
@@ -477,7 +484,12 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="mMO-GZ-deI" secondAttribute="bottom" constant="15.5" id="DeO-FD-LPy">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
+                                                <constraint firstItem="dtC-ma-6b0" firstAttribute="trailing" secondItem="wSW-4o-kuz" secondAttribute="trailing" id="E8h-lA-afX"/>
+                                                <constraint firstItem="dtC-ma-6b0" firstAttribute="leading" secondItem="wSW-4o-kuz" secondAttribute="leading" id="GVl-NC-8MS"/>
                                                 <constraint firstItem="ptF-Le-Ehb" firstAttribute="centerY" secondItem="MvX-xs-1Bb" secondAttribute="centerY" id="LVb-UF-Tbe"/>
+                                                <constraint firstItem="dtC-ma-6b0" firstAttribute="top" secondItem="wSW-4o-kuz" secondAttribute="bottom" constant="-25" id="MPZ-Cd-8lB">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstItem="mMO-GZ-deI" firstAttribute="top" secondItem="wSW-4o-kuz" secondAttribute="bottom" constant="50" id="NWq-y2-2P0"/>
                                                 <constraint firstItem="mMO-GZ-deI" firstAttribute="width" secondItem="HL5-90-40x" secondAttribute="width" id="PXg-KY-Lk3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wSW-4o-kuz" secondAttribute="trailing" constant="-42" id="Vbx-WL-HwY">
@@ -494,6 +506,7 @@
                                                 <constraint firstItem="ptF-Le-Ehb" firstAttribute="leading" secondItem="MvX-xs-1Bb" secondAttribute="trailing" constant="91" id="qYX-22-B5K">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
+                                                <constraint firstItem="mMO-GZ-deI" firstAttribute="top" secondItem="dtC-ma-6b0" secondAttribute="bottom" constant="12" id="qqo-NX-mA6"/>
                                                 <constraint firstItem="wSW-4o-kuz" firstAttribute="top" secondItem="MvX-xs-1Bb" secondAttribute="bottom" constant="42" id="tVF-cO-XVs">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
@@ -506,6 +519,7 @@
                                                     <exclude reference="MvX-xs-1Bb"/>
                                                     <exclude reference="ptF-Le-Ehb"/>
                                                     <exclude reference="wSW-4o-kuz"/>
+                                                    <exclude reference="dtC-ma-6b0"/>
                                                     <exclude reference="mMO-GZ-deI"/>
                                                 </mask>
                                                 <mask key="constraints">
@@ -520,10 +534,14 @@
                                                     <exclude reference="XHH-IA-UAt"/>
                                                     <exclude reference="tVF-cO-XVs"/>
                                                     <exclude reference="wEE-2n-40k"/>
+                                                    <exclude reference="E8h-lA-afX"/>
+                                                    <exclude reference="GVl-NC-8MS"/>
+                                                    <exclude reference="MPZ-Cd-8lB"/>
                                                     <exclude reference="DeO-FD-LPy"/>
                                                     <exclude reference="NWq-y2-2P0"/>
                                                     <exclude reference="PXg-KY-Lk3"/>
                                                     <exclude reference="kW8-2x-YrJ"/>
+                                                    <exclude reference="qqo-NX-mA6"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -531,6 +549,7 @@
                                                     <include reference="MvX-xs-1Bb"/>
                                                     <include reference="ptF-Le-Ehb"/>
                                                     <include reference="wSW-4o-kuz"/>
+                                                    <include reference="dtC-ma-6b0"/>
                                                     <include reference="mMO-GZ-deI"/>
                                                 </mask>
                                                 <mask key="constraints">
@@ -545,10 +564,14 @@
                                                     <include reference="XHH-IA-UAt"/>
                                                     <include reference="tVF-cO-XVs"/>
                                                     <exclude reference="wEE-2n-40k"/>
+                                                    <include reference="E8h-lA-afX"/>
+                                                    <include reference="GVl-NC-8MS"/>
+                                                    <include reference="MPZ-Cd-8lB"/>
                                                     <include reference="DeO-FD-LPy"/>
-                                                    <include reference="NWq-y2-2P0"/>
+                                                    <exclude reference="NWq-y2-2P0"/>
                                                     <include reference="PXg-KY-Lk3"/>
                                                     <include reference="kW8-2x-YrJ"/>
+                                                    <include reference="qqo-NX-mA6"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -556,6 +579,8 @@
                                             <outlet property="commentsButton" destination="xAk-h0-eGS" id="JG0-xV-l2v"/>
                                             <outlet property="content" destination="wSW-4o-kuz" id="z5x-Gj-P0U"/>
                                             <outlet property="iconButton" destination="MvX-xs-1Bb" id="Vb3-o2-PJb"/>
+                                            <outlet property="imageContainer" destination="dtC-ma-6b0" id="mVQ-TF-FXC"/>
+                                            <outlet property="imageContainerHeight" destination="Hck-wW-qHx" id="Dtt-7q-2eh"/>
                                             <outlet property="likeButton" destination="1zS-V6-h1l" id="jDo-Je-bX0"/>
                                             <outlet property="name" destination="ptF-Le-Ehb" id="fwO-l3-00W"/>
                                             <outlet property="repostsButton" destination="zfI-V6-JId" id="Hwv-uV-kTF"/>

@@ -67,18 +67,6 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ContentCell
         let message = messages.statuses?[indexPath.row]
-//        let avatar = message?.imgUrl
-//        let name = message?.userName
-//        let text = message?.text
-//        let repostsCount = message?.repostsCount!
-//        let commentsCount = message?.commentsCount!
-//        let attitudesCount = message?.attitudesCount!
-//        cell.iconButton.sd_setImageWithURL(NSURL(string: avatar!)!, forState: UIControlState.Normal)
-//        cell.name.text = name
-//        cell.content.text = text
-//        cell.repostsButton.setTitle(String(repostsCount!), forState: UIControlState.Normal)
-//        cell.commentsButton.setTitle(String(commentsCount!), forState: UIControlState.Normal)
-//        cell.likeButton.setTitle(String(attitudesCount!), forState: UIControlState.Normal)
         cell.updateCell(message!)
         return cell;
     }
