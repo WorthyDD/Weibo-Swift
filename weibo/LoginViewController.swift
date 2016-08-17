@@ -11,27 +11,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+
     
-    @IBOutlet weak var userIDTextField: UITextField!
+    @IBOutlet weak var webView: UIWebView!
     
-    @IBOutlet weak var passwordTextFiled: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let url = "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redirect_uri=\(redirectUri)&response_type=code"
+        let request = NSURLRequest(URL: NSURL(string: url)!)
+        webView.loadRequest(request)
     }
+
     
-    
-    @IBAction func didTapLogin(sender: AnyObject) {
+    @IBAction func didTapAutoFillPassword(sender: AnyObject) {
+        // js代码  注入webView  自动填充用户名和密码
         
-        self.dismissViewControllerAnimated(true) { 
-            let request: WBAuthorizeRequest! = WBAuthorizeRequest.request() as! WBAuthorizeRequest
-//            request.redirectURI = "https://api.weibo.com/oauth2/default.html"
-            request.redirectURI = "https://www.sina.com"
-            request.scope = "all"
-            
-            WeiboSDK.sendRequest(request)
-        }
+        let js = "document.getElementById('userId').value = '1134532311@qq.com';"
+        webView.stringByEvaluatingJavaScriptFromString(js)
+        
     }
     
 }

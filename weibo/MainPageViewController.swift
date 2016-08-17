@@ -28,7 +28,11 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         acIndicator.startAnimating()
         self.tableView.addSubview(acIndicator)
         
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
+        self.presentViewController(loginVC!, animated: true, completion: nil)
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
