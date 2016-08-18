@@ -17,6 +17,10 @@ class User:Mappable{
     var id : Int!
     var desc : String?
     var gender : String?
+    var domain : String?
+    var statusesCount : Int!
+    var friendsCount : Int!
+    var followersCount : Int!
     
     required init?(_ map: Map) {
         
@@ -29,5 +33,9 @@ class User:Mappable{
         id <- map["id"]
         desc <- map["description"]
         gender <- map["gender"]
+        domain <- map["domain"]
+        statusesCount <- map["statuses_count"]
+        friendsCount <- map["friends_count"]
+        followersCount <- map["followers_count"]
     }
 }
