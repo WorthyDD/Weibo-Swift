@@ -7,11 +7,13 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
   - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 3.0)
   - SDWebImage (~> 3.8)
+  - SVProgressHUD
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
 
 EXTERNAL SOURCES:
@@ -28,8 +30,9 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: 4a5e25f4caf57d21a8728cffbeb58203a893fea8
+PODFILE CHECKSUM: f2b6bc052a3443d086e7482dc6be62a73acee5d7
 
 COCOAPODS: 1.0.0

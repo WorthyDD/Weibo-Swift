@@ -94,6 +94,7 @@
                                 <exclude reference="AYj-pm-fzt"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1NB-wd-3XT"/>
                                 <exclude reference="g4v-LZ-i6r"/>
                                 <exclude reference="lon-Zs-wxK"/>
                                 <exclude reference="sMk-Ge-ic6"/>
@@ -102,7 +103,6 @@
                                 <exclude reference="Rx4-nh-KKb"/>
                                 <exclude reference="ZN6-mo-Vmd"/>
                                 <exclude reference="jeM-D2-GkH"/>
-                                <exclude reference="1NB-wd-3XT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -111,6 +111,7 @@
                                 <include reference="AYj-pm-fzt"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1NB-wd-3XT"/>
                                 <include reference="g4v-LZ-i6r"/>
                                 <include reference="lon-Zs-wxK"/>
                                 <include reference="sMk-Ge-ic6"/>
@@ -119,7 +120,6 @@
                                 <exclude reference="Rx4-nh-KKb"/>
                                 <include reference="ZN6-mo-Vmd"/>
                                 <exclude reference="jeM-D2-GkH"/>
-                                <include reference="1NB-wd-3XT"/>
                             </mask>
                         </variation>
                     </view>
@@ -573,10 +573,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="Joo-Wt-ZZ9">
-                        <barButtonItem key="rightBarButtonItem" image="edit" id="vin-TY-vi8">
+                        <barButtonItem key="rightBarButtonItem" title="login" id="vin-TY-vi8">
                             <color key="tintColor" red="1" green="0.46754895670000002" blue="0.406071185" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Wsh-Ns-n4p" kind="push" id="abr-lc-7Hz"/>
+                                <action selector="didTapLogin:" destination="2Fr-00-oBD" id="SWJ-Qk-bbV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1098,7 +1098,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="edit" width="26" height="26"/>
         <image name="forward" width="20" height="17"/>
         <image name="like" width="20" height="20"/>
         <image name="message" width="20" height="17"/>

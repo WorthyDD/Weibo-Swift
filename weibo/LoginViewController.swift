@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 
 class LoginViewController: UIViewController {
@@ -21,7 +22,9 @@ class LoginViewController: UIViewController {
         
         let url = "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redirect_uri=\(redirectUri)&response_type=code"
         let request = NSURLRequest(URL: NSURL(string: url)!)
+        webView.scrollView.scrollEnabled = false
         webView.loadRequest(request)
+        webView.delegate = self
     }
 
     
@@ -33,4 +36,40 @@ class LoginViewController: UIViewController {
         
     }
     
+}
+
+extension LoginViewController : UIWebViewDelegate{
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        if request.URL?.absoluteString.hasPrefix(redirectUri) == false{
+            return true
+        }
+        
+        if request.URL?.query?.hasPrefix("code=") == false{
+            
+            print("取消授权")
+            SVProgressHUD.dismiss()
+            dismissViewControllerAnimated(true, completion: nil)
+            return false
+            
+        }
+        
+        let code = request.URL?.query?.substringFromIndex("code=".endIndex)
+        print("授权码 : \(code!)")
+        SVProgressHUD.dismiss()
+        dismissViewControllerAnimated(true) { 
+            ShareManager.shareInstance.getAccessToken(code!)
+        }
+        return false
+        
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
 }

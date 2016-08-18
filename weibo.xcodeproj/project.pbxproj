@@ -12,6 +12,8 @@
 		CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */; };
 		CC0DD5671D60582600BF6FF5 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5661D60582600BF6FF5 /* ShareManager.swift */; };
 		CC0DD5691D605D1900BF6FF5 /* WeiboSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0DD5681D605D1900BF6FF5 /* WeiboSDK */; };
+		CC61F8D81D65619100997C76 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC61F8D71D65619100997C76 /* SVProgressHUD.framework */; };
+		CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC61F8D91D65839200997C76 /* UserAccount.swift */; };
 		CC6E00CF1D61AE5500D5C6DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E00CE1D61AE5500D5C6DC /* Message.swift */; };
 		CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E00D01D61B57300D5C6DC /* Messages.swift */; };
 		CC6E00D41D61B8ED00D5C6DC /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6E00D21D61B87100D5C6DC /* AlamofireObjectMapper.framework */; };
@@ -60,6 +62,8 @@
 		CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC0DD5661D60582600BF6FF5 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		CC0DD5681D605D1900BF6FF5 /* WeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WeiboSDK; path = Pods/WeiboSDK; sourceTree = "<group>"; };
+		CC61F8D71D65619100997C76 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		CC61F8D91D65839200997C76 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		CC6E00CC1D61AE2800D5C6DC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/weibo-besjumjcnmtkzbeodggfkkeiyoer/Build/Products/Debug-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		CC6E00CE1D61AE5500D5C6DC /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CC6E00D01D61B57300D5C6DC /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC61F8D81D65619100997C76 /* SVProgressHUD.framework in Frameworks */,
 				CC6E00D41D61B8ED00D5C6DC /* AlamofireObjectMapper.framework in Frameworks */,
 				CC04A76F1D60B4370005E4A8 /* SDWebImage.framework in Frameworks */,
 				CC0DD5691D605D1900BF6FF5 /* WeiboSDK in Frameworks */,
@@ -127,6 +132,7 @@
 		0ABC638E1436F677FEA95F35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC61F8D71D65619100997C76 /* SVProgressHUD.framework */,
 				CC6E00D21D61B87100D5C6DC /* AlamofireObjectMapper.framework */,
 				CC6E00CC1D61AE2800D5C6DC /* ObjectMapper.framework */,
 				CC04A76E1D60B4370005E4A8 /* SDWebImage.framework */,
@@ -145,6 +151,7 @@
 				CC6E00CE1D61AE5500D5C6DC /* Message.swift */,
 				CC6E00D01D61B57300D5C6DC /* Messages.swift */,
 				CC6E00D71D61C9AB00D5C6DC /* User.swift */,
+				CC61F8D91D65839200997C76 /* UserAccount.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,8 +273,8 @@
 		CC7E295C1D5F2F7D00B74EA2 /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */,
 				CC0DD5661D60582600BF6FF5 /* ShareManager.swift */,
+				CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */,
 				CC6E00D51D61C19F00D5C6DC /* BaseController.swift */,
 			);
 			name = BaseVC;
@@ -601,6 +608,7 @@
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
 				CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */,
+				CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */,
 				CC6E00D81D61C9AB00D5C6DC /* User.swift in Sources */,
 				CC7E29531D5F12AE00B74EA2 /* UIColor+TAToolkit.m in Sources */,
 				CC7E29581D5F17F500B74EA2 /* ProfileViewController.swift in Sources */,
@@ -759,6 +767,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
 				);
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -786,6 +795,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
 				);
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

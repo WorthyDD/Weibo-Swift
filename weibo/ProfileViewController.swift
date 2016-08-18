@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     func getUserInfo(){
         
         let urlString = "https://api.weibo.com/2/users/show.json"
-        let params = ["access_token" : accessToken]
+        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!]
         Alamofire.request(.GET, urlString, parameters: params)
             .responseJSON { response in
                 //                print(response.request)  // original URL request
