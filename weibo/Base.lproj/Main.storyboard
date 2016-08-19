@@ -165,7 +165,7 @@
                                                             <variation key="widthClass=compact" constant="40"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <state key="normal" image="1AF6A271-ED07-4E40-BA50-264C885AF348"/>
+                                                    <state key="normal" image="7AF1D40E-B104-41C8-99D7-DB0234ECA51C"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                             <real key="value" value="20"/>
@@ -1149,9 +1149,9 @@
                     <view key="view" contentMode="scaleToFill" id="BsN-lZ-BBp">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-B8-gkY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-B8-gkY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="z37-rf-IY2" customClass="FriendsCell" customModule="weibo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1349,7 +1349,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1AF6A271-ED07-4E40-BA50-264C885AF348" width="134" height="134">
+        <image name="7AF1D40E-B104-41C8-99D7-DB0234ECA51C" width="134" height="134">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

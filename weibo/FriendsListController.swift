@@ -65,6 +65,9 @@ class FriendsListController: UIViewController, UITableViewDataSource, UITableVie
         return friends != nil ? friends!.count : 0
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
