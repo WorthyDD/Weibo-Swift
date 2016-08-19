@@ -81,6 +81,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ContentCell
+        cell.controller = self
         let message = messages.statuses?[indexPath.row]
         cell.updateCell(message!)
         return cell;

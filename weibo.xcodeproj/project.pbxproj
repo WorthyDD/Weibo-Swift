@@ -12,6 +12,9 @@
 		CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */; };
 		CC0DD5671D60582600BF6FF5 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0DD5661D60582600BF6FF5 /* ShareManager.swift */; };
 		CC0DD5691D605D1900BF6FF5 /* WeiboSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0DD5681D605D1900BF6FF5 /* WeiboSDK */; };
+		CC5F88101D66E96000E3780F /* FriendsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F880F1D66E96000E3780F /* FriendsListController.swift */; };
+		CC5F88121D66E9AA00E3780F /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F88111D66E9AA00E3780F /* FriendsCell.swift */; };
+		CC5F88141D66F26100E3780F /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F88131D66F26100E3780F /* FriendsList.swift */; };
 		CC61F8D81D65619100997C76 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC61F8D71D65619100997C76 /* SVProgressHUD.framework */; };
 		CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC61F8D91D65839200997C76 /* UserAccount.swift */; };
 		CC6E00CF1D61AE5500D5C6DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E00CE1D61AE5500D5C6DC /* Message.swift */; };
@@ -62,6 +65,9 @@
 		CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC0DD5661D60582600BF6FF5 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		CC0DD5681D605D1900BF6FF5 /* WeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WeiboSDK; path = Pods/WeiboSDK; sourceTree = "<group>"; };
+		CC5F880F1D66E96000E3780F /* FriendsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListController.swift; sourceTree = "<group>"; };
+		CC5F88111D66E9AA00E3780F /* FriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
+		CC5F88131D66F26100E3780F /* FriendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		CC61F8D71D65619100997C76 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
 		CC61F8D91D65839200997C76 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		CC6E00CC1D61AE2800D5C6DC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/weibo-besjumjcnmtkzbeodggfkkeiyoer/Build/Products/Debug-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 				CC6E00D01D61B57300D5C6DC /* Messages.swift */,
 				CC6E00D71D61C9AB00D5C6DC /* User.swift */,
 				CC61F8D91D65839200997C76 /* UserAccount.swift */,
+				CC5F88131D66F26100E3780F /* FriendsList.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -247,8 +254,8 @@
 		CC7E29431D5F0B7B00B74EA2 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				CC7E29461D5F0C7600B74EA2 /* MainPageViewController.swift */,
 				CC7E294A1D5F118100B74EA2 /* ContentCell.swift */,
+				CC7E29461D5F0C7600B74EA2 /* MainPageViewController.swift */,
 				CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */,
 			);
 			name = MainPage;
@@ -257,7 +264,9 @@
 		CC7E29561D5F17C900B74EA2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CC5F88111D66E9AA00E3780F /* FriendsCell.swift */,
 				CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */,
+				CC5F880F1D66E96000E3780F /* FriendsListController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -601,12 +610,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */,
+				CC5F88121D66E9AA00E3780F /* FriendsCell.swift in Sources */,
 				CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */,
 				CC6E00D61D61C19F00D5C6DC /* BaseController.swift in Sources */,
 				CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */,
 				CC0DD5671D60582600BF6FF5 /* ShareManager.swift in Sources */,
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
+				CC5F88101D66E96000E3780F /* FriendsListController.swift in Sources */,
 				CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */,
 				CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */,
 				CC6E00D81D61C9AB00D5C6DC /* User.swift in Sources */,
@@ -614,6 +625,7 @@
 				CC7E29581D5F17F500B74EA2 /* ProfileViewController.swift in Sources */,
 				CC7E29471D5F0C7600B74EA2 /* MainPageViewController.swift in Sources */,
 				CC6E00CF1D61AE5500D5C6DC /* Message.swift in Sources */,
+				CC5F88141D66F26100E3780F /* FriendsList.swift in Sources */,
 				CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */,
 				CC7E290E1D5F02C400B74EA2 /* AppDelegate.swift in Sources */,
 			);

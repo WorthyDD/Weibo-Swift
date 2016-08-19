@@ -19,7 +19,7 @@ class Message: Mappable{
     var commentsCount : Int?
     var attitudesCount : Int?
     var picUrls : NSArray?
-    var user : User!
+    var user : User?
     
     required init?(_ map: Map) {
         

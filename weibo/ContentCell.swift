@@ -19,8 +19,12 @@ class ContentCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageContainerHeight: NSLayoutConstraint!
- 
+    weak var controller : MainPageViewController?
+    var msg : Message?
+    
+    
     func updateCell(message : Message){
+        self.msg = message
         let avatar = message.imgUrl
         let userName = message.userName
         let text = message.text
@@ -84,7 +88,7 @@ class ContentCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ContentCell.touchImageLarge(_:)))
         ivLarge.addGestureRecognizer(tap)
         ivLarge.backgroundColor = UIColor.blackColor()
-        UIView.animateWithDuration(0.6, animations: {
+        UIView.animateWithDuration(0.3, animations: {
             ivLarge.frame = UIScreen.mainScreen().bounds
             }) { (true) in
                 
@@ -93,19 +97,35 @@ class ContentCell: UITableViewCell {
     
     func touchImageLarge(tap : UITapGestureRecognizer){
         let ivLarge = tap.view!
-        UIView.animateWithDuration(0.6, animations: {
+        UIView.animateWithDuration(0.3, animations: {
             ivLarge.frame = CGRectMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 0, 0)
+            ivLarge.alpha = 0
         }) { (true) in
             ivLarge.removeFromSuperview()
         }
 
     }
     @IBAction func didTapRepostButton(sender: AnyObject) {
+        
     }
     
     @IBAction func didTapCommentButton(sender: AnyObject) {
+        
     }
     
     @IBAction func didTapLikeButton(sender: AnyObject) {
+        
     }
+    
+    @IBAction func didTapIconButton(sender: AnyObject) {
+        
+        if controller != nil{
+            let profileController = controller?.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            profileController.user = msg?.user
+            controller?.navigationController?.pushViewController(profileController, animated: true)
+//            profileController.updateUIWithUser((msg?.user)!)
+            
+        }
+    }
+    
 }

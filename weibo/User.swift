@@ -21,6 +21,7 @@ class User:Mappable{
     var statusesCount : Int!
     var friendsCount : Int!
     var followersCount : Int!
+    var following : Bool!
     
     required init?(_ map: Map) {
         
@@ -37,5 +38,6 @@ class User:Mappable{
         statusesCount <- map["statuses_count"]
         friendsCount <- map["friends_count"]
         followersCount <- map["followers_count"]
+        following <- map["following"]
     }
 }
