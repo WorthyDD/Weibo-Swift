@@ -111,6 +111,13 @@ class ContentCell: UITableViewCell {
     
     @IBAction func didTapCommentButton(sender: AnyObject) {
         
+        if controller != nil{
+            
+            let commentDetailVC = controller?.storyboard?.instantiateViewControllerWithIdentifier("CommentDetailController") as! CommentDetailController
+            commentDetailVC.message = msg
+            commentDetailVC.shouldFocus = true
+            controller?.navigationController?.pushViewController(commentDetailVC, animated: true)
+        }
     }
     
     @IBAction func didTapLikeButton(sender: AnyObject) {
