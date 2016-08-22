@@ -36,6 +36,8 @@
 		CC7E29581D5F17F500B74EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E29571D5F17F500B74EA2 /* ProfileViewController.swift */; };
 		CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */; };
 		CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */; };
+		CC80EA3A1D6AA0C50013CBF5 /* CommentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80EA391D6AA0C50013CBF5 /* CommentDetailController.swift */; };
+		CC80EA3C1D6ADC7D0013CBF5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80EA3B1D6ADC7D0013CBF5 /* Comment.swift */; };
 		DF581A9662EBBA9B46743464 /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58EB6E24604342A9F640B62 /* Pods_weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageViewController.swift; sourceTree = "<group>"; };
 		CC7E295D1D5F2FA700B74EA2 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		CC7E29691D5F4E5300B74EA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/weibo-bmfdzkifjcltrudlkqbrflsmizom/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		CC80EA391D6AA0C50013CBF5 /* CommentDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailController.swift; sourceTree = "<group>"; };
+		CC80EA3B1D6ADC7D0013CBF5 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D58EB6E24604342A9F640B62 /* Pods_weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,7 @@
 				CC6E00D71D61C9AB00D5C6DC /* User.swift */,
 				CC61F8D91D65839200997C76 /* UserAccount.swift */,
 				CC5F88131D66F26100E3780F /* FriendsList.swift */,
+				CC80EA3B1D6ADC7D0013CBF5 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				CC7E294A1D5F118100B74EA2 /* ContentCell.swift */,
 				CC7E29461D5F0C7600B74EA2 /* MainPageViewController.swift */,
 				CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */,
+				CC80EA391D6AA0C50013CBF5 /* CommentDetailController.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
 				CC5F88101D66E96000E3780F /* FriendsListController.swift in Sources */,
 				CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */,
+				CC80EA3C1D6ADC7D0013CBF5 /* Comment.swift in Sources */,
 				CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */,
 				CC6E00D81D61C9AB00D5C6DC /* User.swift in Sources */,
 				CC7E29531D5F12AE00B74EA2 /* UIColor+TAToolkit.m in Sources */,
@@ -627,6 +634,7 @@
 				CC6E00CF1D61AE5500D5C6DC /* Message.swift in Sources */,
 				CC5F88141D66F26100E3780F /* FriendsList.swift in Sources */,
 				CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */,
+				CC80EA3A1D6AA0C50013CBF5 /* CommentDetailController.swift in Sources */,
 				CC7E290E1D5F02C400B74EA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

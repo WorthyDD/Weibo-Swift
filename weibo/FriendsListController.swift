@@ -80,6 +80,7 @@ class FriendsListController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let user = friends![indexPath.row]
         let profileController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         profileController.user = user

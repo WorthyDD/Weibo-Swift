@@ -12,17 +12,23 @@ import Alamofire
 import SDWebImage
 import SVProgressHUD
 
+
+let commentDetailSegue = "commentDetailSegue"
+
+
 class MainPageViewController: BaseController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     private var messages:Messages!
+    lazy var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "refreshing...")
         ShareManager.shareInstance.userAccount.readAccount()
         let expireDate = ShareManager.shareInstance.userAccount.expireDate
         if expireDate != nil &&  expireDate!.compare(NSDate()) == NSComparisonResult.OrderedDescending{
@@ -59,6 +65,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         SVProgressHUD.show()
         Alamofire.request(.GET, urlString, parameters: params).responseObject{ (response : Response<Messages, NSError>) in
             SVProgressHUD.dismiss()
+            self.refreshControl.endRefreshing()
             if let messages = response.result.value{
                 print("\n\nresponseObject : \(messages)")
                 self.messages = messages
@@ -87,9 +94,24 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         return cell;
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier(commentDetailSegue, sender: indexPath.row)
+    }
+    
     @IBAction func didTapLogin(sender: AnyObject) {
         let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
         self.presentViewController(loginVC!, animated: true, completion: nil)
     }
     
+    // Mark : segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == commentDetailSegue{
+            let row = sender as! Int
+            let message = messages.statuses?[row]
+            let commentDetailVC = segue.destinationViewController as! CommentDetailController
+            commentDetailVC.message = message
+        }
+    }
 }

@@ -34,9 +34,9 @@ class ContentCell: UITableViewCell {
         iconButton.sd_setImageWithURL(NSURL(string: avatar!)!, forState: UIControlState.Normal)
         name.text = userName
         content.text = text
-        repostsButton.setTitle(String(repostsCount), forState: UIControlState.Normal)
-        commentsButton.setTitle(String(commentsCount), forState: UIControlState.Normal)
-        likeButton.setTitle(String(attitudesCount), forState: UIControlState.Normal)
+        repostsButton?.setTitle(String(repostsCount), forState: UIControlState.Normal)
+        commentsButton?.setTitle(String(commentsCount), forState: UIControlState.Normal)
+        likeButton?.setTitle(String(attitudesCount), forState: UIControlState.Normal)
         updateImageContainer(message.picUrls!)
     }
     
