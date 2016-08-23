@@ -20,6 +20,7 @@ class Message: Mappable{
     var commentsCount : Int?
     var attitudesCount : Int?
     var picUrls : NSArray?
+    var retweetedStatus : Message?
     var user : User?
     
     required init?(_ map: Map) {
@@ -37,5 +38,8 @@ class Message: Mappable{
         attitudesCount <- map["attitudes_count"]
         picUrls <- map["pic_urls"]
         user <- map["user"]
+        retweetedStatus <- map["retweeted_status"]
     }
+    
+    
 }

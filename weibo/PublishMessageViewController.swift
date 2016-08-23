@@ -10,4 +10,25 @@ import UIKit
 
 class PublishMessageViewController: UIViewController {
     
+    
+    
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageContainerView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    @IBAction func didTapCancle(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
+    }
+    
+    @IBAction func didTapSend(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
+    }
 }

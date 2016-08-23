@@ -17,6 +17,7 @@ let appKey = "3536233261"
 let secretKey = "d357a2dc8c79116311af6ef1e44fc3b0"
 let redirectUri = "http://www.baidu.com"
 let kLoginSuccessNotification = "login_success"
+let kDataChangeNotification = "dataChangeNotification"
 
 //https://api.weibo.com/oauth2/authorize?client_id=3536233261&redirect_uri=http://www.baidu.com&response_type=code
 class ShareManager: NSObject {

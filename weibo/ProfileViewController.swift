@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 
+
+let mainPageSBID = "MainPageViewController"
+
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var iconButton: UIButton!
@@ -43,7 +46,9 @@ class ProfileViewController: UIViewController {
             let tap2 = UITapGestureRecognizer(target: self, action: #selector(didTapFriendsView(_:)))
             friendsView.userInteractionEnabled = true
             friendsView.addGestureRecognizer(tap2)
-            
+            let tap3 = UITapGestureRecognizer(target: self, action: #selector(didTapStatuesView(_:)))
+            statusesView.userInteractionEnabled = true
+            statusesView.addGestureRecognizer(tap3)
         }
         
         iconButton.addTarget(self, action: #selector(didTapIconButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -123,6 +128,11 @@ class ProfileViewController: UIViewController {
     
     func didTapStatuesView(tap : UITapGestureRecognizer){
         
+        let mainPageVC = self.storyboard?.instantiateViewControllerWithIdentifier(mainPageSBID) as! MainPageViewController
+        mainPageVC.entry = 1
+        mainPageVC.hidesBottomBarWhenPushed = true
+        mainPageVC.automaticallyAdjustsScrollViewInsets = true
+        self.navigationController?.pushViewController(mainPageVC, animated: true)
     }
     
     func didTapFriendsView(tap : UITapGestureRecognizer){

@@ -31,7 +31,7 @@ class CommentDetailController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
-
+        self.automaticallyAdjustsScrollViewInsets = true
         tableView.estimatedRowHeight = 160
         tableView.rowHeight = UITableViewAutomaticDimension
         loadData()
@@ -84,6 +84,14 @@ class CommentDetailController: UIViewController, UITableViewDelegate, UITableVie
             return 10
         }
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1{
+            return "comment list"
+        }
+        return ""
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{

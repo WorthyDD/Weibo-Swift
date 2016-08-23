@@ -15,35 +15,49 @@ import SVProgressHUD
 
 let commentDetailSegue = "commentDetailSegue"
 
-
 class MainPageViewController: BaseController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     private var messages:Messages!
+    var entry = 0;       //入口, 0--默认主页   1--从个人中心查看自己发的微博
     lazy var refreshControl = UIRefreshControl()
-    
+    var currentPage = 1
     override func viewDidLoad() {
         
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "refreshing...")
-        ShareManager.shareInstance.userAccount.readAccount()
-        let expireDate = ShareManager.shareInstance.userAccount.expireDate
-        if expireDate != nil &&  expireDate!.compare(NSDate()) == NSComparisonResult.OrderedDescending{
-            print("未过期")
-            self.loadData()
-            
+        refreshControl.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
+        
+        //个人发的微博
+        if entry == 1{
+            self.title = "Mine Statuses"
+            loadData()
+            self.navigationItem.rightBarButtonItem = nil
         }
         else{
-            let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
-            self.presentViewController(loginVC!, animated: true, completion: nil)
+            //首页
+            self.title = "Main"
+            ShareManager.shareInstance.userAccount.readAccount()
+            let expireDate = ShareManager.shareInstance.userAccount.expireDate
+            if expireDate != nil &&  expireDate!.compare(NSDate()) == NSComparisonResult.OrderedDescending{
+                print("未过期")
+                self.loadData()
+                
+            }
+            else{
+                let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
+                self.presentViewController(loginVC!, animated: true, completion: nil)
+            }
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didGetLoginSuccessNotification(_:)), name: kLoginSuccessNotification, object: nil)
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didGetLoginSuccessNotification(_:)), name: kLoginSuccessNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didGetDataChangeNotification(_:)), name: kDataChangeNotification, object: nil)
+        
     }
     
+    // 登录成功
     func didGetLoginSuccessNotification(notifi : NSNotification){
         print("login success!!")
         self.loadData()
@@ -55,12 +69,22 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
 //        self .loadData()
     }
     
+    
+    //get weibo messages from main page
     func loadData(){
         
         if ShareManager.shareInstance.userAccount.accessToken == nil{
             return
         }
-        let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+        currentPage = 1
+        var urlString = ""
+        if entry == 1{
+            urlString = "https://api.weibo.com/2/statuses/user_timeline.json"
+        }
+        else{
+            urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+        }
+        
         let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!]
         SVProgressHUD.show()
         Alamofire.request(.GET, urlString, parameters: params).responseObject{ (response : Response<Messages, NSError>) in
@@ -69,11 +93,68 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
             if let messages = response.result.value{
                 print("\n\nresponseObject : \(messages)")
                 self.messages = messages
+                if messages.statuses == nil{
+                    return
+                }
+                for msg in self.messages.statuses!{
+                    //if there is retweeted_status
+                    if msg.retweetedStatus != nil{
+                        msg.text?.appendContentsOf("\nrepost content : \n\(msg.retweetedStatus!.text ?? "")")
+                        msg.picUrls = msg.retweetedStatus?.picUrls
+                    }
+
+                }
+                
                 self.tableView .reloadData()
             }
             
         }
         
+    }
+    
+    
+    // load more
+    func loadMore() {
+        
+        currentPage += 1
+        var urlString = ""
+        if entry == 1{
+            urlString = "https://api.weibo.com/2/statuses/user_timeline.json"
+        }
+        else{
+            urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+        }
+        
+        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!,
+                      "page" : "\(currentPage)"]
+//        SVProgressHUD.show()
+        Alamofire.request(.GET, urlString, parameters: params).responseObject{ (response : Response<Messages, NSError>) in
+//            SVProgressHUD.dismiss()
+            self.refreshControl.endRefreshing()
+            let error = response.result.error
+            if error != nil{
+                print("error---\(error)")
+                return
+            }
+            if let messages = response.result.value{
+                print("\n\nresponseObject : \(messages)")
+                if messages.statuses == nil{
+                    return
+                }
+                for msg in messages.statuses!{
+                    //if there is retweeted_status
+                    if msg.retweetedStatus != nil{
+                        msg.text?.appendContentsOf("\nrepost content : \n\(msg.retweetedStatus!.text ?? "")")
+                        msg.picUrls = msg.retweetedStatus?.picUrls
+                    }
+                    
+                }
+                self.messages.statuses?.appendContentsOf(messages.statuses!)
+                
+                self.tableView .reloadData()
+            }
+            
+        }
     }
     
     
@@ -92,6 +173,14 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         let message = messages.statuses?[indexPath.row]
         cell.updateCell(message!)
         return cell;
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // when load the last cell showing,  go to load next page data
+        if indexPath.row >= messages.statuses!.count - 1{
+            loadMore()
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -113,5 +202,11 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
             let commentDetailVC = segue.destinationViewController as! CommentDetailController
             commentDetailVC.message = message
         }
+    }
+    
+    
+    //notification
+    func didGetDataChangeNotification(notification : NSNotification){
+        loadData()
     }
 }

@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
+
+let repostURL = "https://api.weibo.com/2/statuses/repost.json"
 
 class ContentCell: UITableViewCell {
 
@@ -24,6 +28,7 @@ class ContentCell: UITableViewCell {
     
     
     func updateCell(message : Message){
+        
         self.msg = message
         let avatar = message.imgUrl
         let userName = message.userName
@@ -107,6 +112,21 @@ class ContentCell: UITableViewCell {
     }
     @IBAction func didTapRepostButton(sender: AnyObject) {
         
+        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!,
+                      "id" : "\(msg!.id)"]
+        Alamofire.request(.POST, repostURL, parameters: params).responseJSON {
+            (response : Response<AnyObject,NSError>) in
+            if response.result.value != nil{
+                let error = response.result.value?.objectForKey("error")
+                if error != nil{
+                    CustomToast.showHudToastWithString("error, \(error)")
+                    return
+                }
+                
+                CustomToast.showHudToastWithString("repost success!")
+                NSNotificationCenter.defaultCenter().postNotificationName(kDataChangeNotification, object: nil)
+            }
+        }
     }
     
     @IBAction func didTapCommentButton(sender: AnyObject) {
@@ -121,6 +141,25 @@ class ContentCell: UITableViewCell {
     }
     
     @IBAction func didTapLikeButton(sender: AnyObject) {
+        
+        let zanButton = sender as! UIButton
+        let zan = UIImageView(image: UIImage(named: "like-blue"))
+        zan.frame = zanButton.frame
+        zan.contentMode = UIViewContentMode.ScaleAspectFit
+        zanButton.superview?.addSubview(zan)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            
+            zan.transform = CGAffineTransformMakeScale(2, 2)
+            zan.alpha = 0
+            
+            }) { (true) in
+                zan.removeFromSuperview()
+                zanButton.setImage(UIImage(named: "like-blue"), forState: UIControlState.Normal)
+                self.msg?.attitudesCount! += 1
+                self.updateCell(self.msg!)
+        }
+        
         
     }
     
