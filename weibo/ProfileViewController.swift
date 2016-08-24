@@ -66,6 +66,7 @@ class ProfileViewController: UIViewController {
                 print("\nuserObject : \(user)")
 //                user as User!
                 self.user = user
+                ShareManager.shareInstance.user = user
                 self.updateUIWithUser(user)
             }
             

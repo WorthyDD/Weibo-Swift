@@ -26,6 +26,7 @@ class ShareManager: NSObject {
     
     
     lazy var userAccount = UserAccount()
+    var user : User?
     
     private override init() {
         

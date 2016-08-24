@@ -10,7 +10,7 @@ import UIKit
 
 let publishMessageSBID = "PublishMessageViewController"
 
-class BaseTabBarController: UITabBarController {
+class BaseTabBarController: UITabBarController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     
     override func viewDidLoad() {
@@ -39,7 +39,70 @@ class BaseTabBarController: UITabBarController {
     
     func didTapPublishButton(sender : UIButton){
         
-        let publishVC = self.storyboard?.instantiateViewControllerWithIdentifier(publishMessageSBID) as! PublishMessageViewController
-        self.presentViewController(publishVC, animated: true, completion: nil)
+        
+        let alertVC = UIAlertController(title: "select photos to upload", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let camera = UIAlertAction(title: "from camera", style: UIAlertActionStyle.Default) { (action) in
+            
+            let picker = UIImagePickerController()
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.delegate = self
+            picker.allowsEditing = false
+            self.presentViewController(picker, animated: true, completion: {
+                
+            })
+
+//            alertVC.dismissViewControllerAnimated(true, completion: {
+//                          })
+            
+        }
+        let album = UIAlertAction(title: "from album", style: UIAlertActionStyle.Default) { (action) in
+            let picker = UIImagePickerController()
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            picker.delegate = self
+            self.presentViewController(picker, animated: true, completion: {
+                
+            })
+
+//            alertVC.dismissViewControllerAnimated(true, completion: {
+//                            })
+
+        }
+        let cancleAction = UIAlertAction(title: "cancle", style: UIAlertActionStyle.Cancel) { (action) in
+            
+        }
+        alertVC.addAction(camera)
+        alertVC.addAction(album)
+        alertVC.addAction(cancleAction)
+        self.presentViewController(alertVC, animated: true) { 
+            
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true) {
+            let publishVC = self.storyboard?.instantiateViewControllerWithIdentifier(publishMessageSBID) as! PublishMessageViewController
+            self.presentViewController(publishVC, animated: true, completion: nil)
+        }
+
+    }
+    
+    func imagePickerController(picker: MSImagePickerController!, didFinishPickingImage images: [AnyObject]!) {
+        picker.dismissViewControllerAnimated(true) { 
+            let publishVC = self.storyboard?.instantiateViewControllerWithIdentifier(publishMessageSBID) as! PublishMessageViewController
+            publishVC.images = images as! [UIImage]!
+            self.presentViewController(publishVC, animated: true, completion: nil)
+
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        picker.dismissViewControllerAnimated(true) { 
+            let publishVC = self.storyboard?.instantiateViewControllerWithIdentifier(publishMessageSBID) as! PublishMessageViewController
+            publishVC.images = [image]
+            self.presentViewController(publishVC, animated: true, completion: nil)
+
+        }
     }
 }

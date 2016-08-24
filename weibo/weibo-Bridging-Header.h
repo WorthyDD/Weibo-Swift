@@ -8,3 +8,4 @@
 #import "UIColor+TAToolkit.h"
 #import "MBProgressHUD.h"
 #import "CustomToast.h"
+#import "MSImagePickerController.h"

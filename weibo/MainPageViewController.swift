@@ -43,6 +43,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
             let expireDate = ShareManager.shareInstance.userAccount.expireDate
             if expireDate != nil &&  expireDate!.compare(NSDate()) == NSComparisonResult.OrderedDescending{
                 print("未过期")
+                self.getUserInfo()
                 self.loadData()
                 
             }
@@ -60,6 +61,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     // 登录成功
     func didGetLoginSuccessNotification(notifi : NSNotification){
         print("login success!!")
+        self.getUserInfo()
         self.loadData()
     }
     
@@ -156,6 +158,26 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
             
         }
     }
+    
+    
+    func getUserInfo(){
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!,
+                      "uid" : ShareManager.shareInstance.userAccount.uid!]
+        Alamofire.request(.GET, urlString, parameters: params).responseObject{ (response : Response<User, NSError>) in
+            if let user = response.result.value{
+                print("\nuserObject : \(user)")
+                //                user as User!
+                ShareManager.shareInstance.user = user
+                self.title = user.userName!
+            }
+            
+        }
+        
+    }
+    
+    
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -40,6 +40,8 @@
 		CC80EA3C1D6ADC7D0013CBF5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80EA3B1D6ADC7D0013CBF5 /* Comment.swift */; };
 		CC80EA411D6AFA440013CBF5 /* CustomToast.m in Sources */ = {isa = PBXBuildFile; fileRef = CC80EA3E1D6AFA440013CBF5 /* CustomToast.m */; };
 		CC80EA421D6AFA440013CBF5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CC80EA401D6AFA440013CBF5 /* MBProgressHUD.m */; };
+		CC99FE4C1D6D3D0D00855172 /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99FE4B1D6D3D0D00855172 /* ImageContainerView.swift */; };
+		CC99FE4F1D6D3FA900855172 /* MSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC99FE4E1D6D3FA900855172 /* MSImagePickerController.m */; };
 		DF581A9662EBBA9B46743464 /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58EB6E24604342A9F640B62 /* Pods_weibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,9 @@
 		CC80EA3E1D6AFA440013CBF5 /* CustomToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomToast.m; sourceTree = "<group>"; };
 		CC80EA3F1D6AFA440013CBF5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CC80EA401D6AFA440013CBF5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CC99FE4B1D6D3D0D00855172 /* ImageContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainerView.swift; sourceTree = "<group>"; };
+		CC99FE4D1D6D3FA900855172 /* MSImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSImagePickerController.h; sourceTree = "<group>"; };
+		CC99FE4E1D6D3FA900855172 /* MSImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSImagePickerController.m; sourceTree = "<group>"; };
 		D58EB6E24604342A9F640B62 /* Pods_weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -237,6 +242,8 @@
 				CC80EA3E1D6AFA440013CBF5 /* CustomToast.m */,
 				CC80EA3F1D6AFA440013CBF5 /* MBProgressHUD.h */,
 				CC80EA401D6AFA440013CBF5 /* MBProgressHUD.m */,
+				CC99FE4D1D6D3FA900855172 /* MSImagePickerController.h */,
+				CC99FE4E1D6D3FA900855172 /* MSImagePickerController.m */,
 				CC7E294C1D5F12AC00B74EA2 /* weibo-Bridging-Header.h */,
 			);
 			name = Tools;
@@ -291,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7E295A1D5F1C9600B74EA2 /* PublishMessageViewController.swift */,
+				CC99FE4B1D6D3D0D00855172 /* ImageContainerView.swift */,
 			);
 			name = Publish;
 			sourceTree = "<group>";
@@ -637,6 +645,7 @@
 				CC5F88101D66E96000E3780F /* FriendsListController.swift in Sources */,
 				CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */,
 				CC80EA3C1D6ADC7D0013CBF5 /* Comment.swift in Sources */,
+				CC99FE4C1D6D3D0D00855172 /* ImageContainerView.swift in Sources */,
 				CC61F8DA1D65839200997C76 /* UserAccount.swift in Sources */,
 				CC6E00D81D61C9AB00D5C6DC /* User.swift in Sources */,
 				CC7E29531D5F12AE00B74EA2 /* UIColor+TAToolkit.m in Sources */,
@@ -644,6 +653,7 @@
 				CC7E29471D5F0C7600B74EA2 /* MainPageViewController.swift in Sources */,
 				CC6E00CF1D61AE5500D5C6DC /* Message.swift in Sources */,
 				CC5F88141D66F26100E3780F /* FriendsList.swift in Sources */,
+				CC99FE4F1D6D3FA900855172 /* MSImagePickerController.m in Sources */,
 				CC80EA411D6AFA440013CBF5 /* CustomToast.m in Sources */,
 				CC0DD5651D6049EA00BF6FF5 /* LoginViewController.swift in Sources */,
 				CC80EA3A1D6AA0C50013CBF5 /* CommentDetailController.swift in Sources */,
