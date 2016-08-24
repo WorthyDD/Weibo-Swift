@@ -8,9 +8,11 @@
 
 import UIKit
 import Alamofire
-
+import SVProgressHUD
 
 let mainPageSBID = "MainPageViewController"
+let followURL = "https://api.weibo.com/2/friendships/create.json"
+let unfollowURL = "https://api.weibo.com/2/friendships/destroy.json"
 
 class ProfileViewController: UIViewController {
 
@@ -56,6 +58,7 @@ class ProfileViewController: UIViewController {
         
     }
     
+    //获取用户信息
     func getUserInfo(){
         
         let urlString = "https://api.weibo.com/2/users/show.json"
@@ -95,6 +98,36 @@ class ProfileViewController: UIViewController {
     @IBAction func followSwichChange(sender: UISwitch) {
         
         
+        //没有权限
+        
+        
+        var urlString = ""
+        if sender.on{
+            //取消关注
+            urlString = unfollowURL
+            
+        }
+        else{
+            //加关注
+            urlString = followURL
+            
+        }
+        
+        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!,
+                  "uid" : "\(user?.id)"]
+        SVProgressHUD.show()
+        Alamofire.request(.POST, urlString, parameters: params).responseJSON { (response : Response<AnyObject, NSError>) in
+            let error = response.result.error
+            let json = response.result.value
+            if error != nil{
+                print("error---\(error)")
+                SVProgressHUD.showErrorWithStatus("error!--\(error)")
+            }
+            if json != nil{
+                SVProgressHUD.showSuccessWithStatus("follow success!")
+                print("json---\(json)")
+            }
+        }
     }
     
     func didTapIconButton(sender : UIButton){
