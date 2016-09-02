@@ -41,6 +41,7 @@ class CommentDetailController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidAppear(animated)
         if shouldFocus{
             editTextField.becomeFirstResponder()
+            shouldFocus = false
         }
     }
     
@@ -101,13 +102,10 @@ class CommentDetailController: UIViewController, UITableViewDelegate, UITableVie
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! CommentCell
             let comment = commentsArr![indexPath.row]
-            let name = NSMutableAttributedString(string: "\((comment.user?.userName)!) : ", attributes: [NSForegroundColorAttributeName : UIColor.init(RGB: 0xfd6e37)])
-            let content = NSAttributedString(string: comment.text!, attributes: [NSForegroundColorAttributeName : UIColor.init(RGB: 0x666666)])
-            name.appendAttributedString(content)
-            cell.textLabel?.attributedText = name
-            cell.textLabel?.numberOfLines = 0
+            cell.controller = self
+            cell.updateCellWithComment(comment)
             return cell
         }
     }

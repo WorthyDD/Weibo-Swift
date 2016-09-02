@@ -73,6 +73,8 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     }
     
     
+    
+    // MARK: - load data
     //get weibo messages from main page
     func loadData(loading : Bool){
         
@@ -198,7 +200,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     }
     
     
-    
+    // MARK: - tableView
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;

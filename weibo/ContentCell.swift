@@ -22,6 +22,7 @@ class ContentCell: UITableViewCell {
     @IBOutlet weak var commentsButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageContainerHeight: NSLayoutConstraint!
 
     weak var controller : MainPageViewController?
@@ -34,12 +35,14 @@ class ContentCell: UITableViewCell {
         let avatar = message.imgUrl
         let userName = message.userName
         let text = message.text
+        let time = message.time
         let repostsCount = message.repostsCount!
         let commentsCount = message.commentsCount!
         let attitudesCount = message.attitudesCount!
         iconButton.sd_setImageWithURL(NSURL(string: avatar!)!, forState: UIControlState.Normal)
         name.text = userName
         content.text = text
+        timeLabel.text = time
         repostsButton?.setTitle(String(repostsCount), forState: UIControlState.Normal)
         commentsButton?.setTitle(String(commentsCount), forState: UIControlState.Normal)
         likeButton?.setTitle(String(attitudesCount), forState: UIControlState.Normal)

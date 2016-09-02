@@ -12,6 +12,7 @@ import ObjectMapper
 class Message: Mappable{
 
     var id : Int!
+    var time : String?
     var userName : String?
     var text : String?
     var desc : String?
@@ -29,6 +30,7 @@ class Message: Mappable{
     
     func mapping(map : Map){
         id <- map["id"]
+        time <- map["created_at"]
         userName <- map["user.name"]
         text <- map["text"]
         desc <- map["user.description"]
