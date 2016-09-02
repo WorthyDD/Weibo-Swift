@@ -166,7 +166,7 @@
                                                             <variation key="widthClass=compact" constant="40"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <state key="normal" image="99769EBD-CC1B-4592-908E-7B82156835B7"/>
+                                                    <state key="normal" image="2774D91C-2FCE-496E-9CA9-8357A76BCB6E"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                             <real key="value" value="20"/>
@@ -627,7 +627,7 @@
                                                             <variation key="widthClass=compact" constant="40"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <state key="normal" image="53666A3C-06A6-4DF7-A69A-F7E112EC2182"/>
+                                                    <state key="normal" image="9AA2A535-0891-41A8-BAAE-3030EBAB50B6"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                             <real key="value" value="20"/>
@@ -959,6 +959,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJY-jo-eeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1335" y="135"/>
+        </scene>
+        <!--Image Checker Controller-->
+        <scene sceneID="432-co-2YE">
+            <objects>
+                <collectionViewController storyboardIdentifier="ImageCheckerController" hidesBottomBarWhenPushed="YES" id="9ha-5L-X4U" customClass="ImageCheckerController" customModule="weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Fei-Qh-V60">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="01O-eF-Oea">
+                            <size key="itemSize" width="320" height="439"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="qVB-SL-500" customClass="ImageCell" customModule="weibo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffI-F2-ELr">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ffI-F2-ELr" firstAttribute="height" secondItem="qVB-SL-500" secondAttribute="height" id="6ef-Cl-b6P"/>
+                                    <constraint firstItem="ffI-F2-ELr" firstAttribute="centerX" secondItem="qVB-SL-500" secondAttribute="centerX" id="H72-38-cMK"/>
+                                    <constraint firstItem="ffI-F2-ELr" firstAttribute="centerY" secondItem="qVB-SL-500" secondAttribute="centerY" id="Q53-OX-63W"/>
+                                    <constraint firstItem="ffI-F2-ELr" firstAttribute="width" secondItem="qVB-SL-500" secondAttribute="width" id="yUg-Ne-Hdz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="ffI-F2-ELr"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="6ef-Cl-b6P"/>
+                                        <exclude reference="H72-38-cMK"/>
+                                        <exclude reference="Q53-OX-63W"/>
+                                        <exclude reference="yUg-Ne-Hdz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="ffI-F2-ELr"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="6ef-Cl-b6P"/>
+                                        <include reference="H72-38-cMK"/>
+                                        <include reference="Q53-OX-63W"/>
+                                        <include reference="yUg-Ne-Hdz"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="imageView" destination="ffI-F2-ELr" id="rh9-ff-ufO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="9ha-5L-X4U" id="4KZ-vJ-gLk"/>
+                            <outlet property="delegate" destination="9ha-5L-X4U" id="uTc-LR-u3q"/>
+                        </connections>
+                    </collectionView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQn-Gp-LwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="825"/>
         </scene>
         <!--Publish Message View Controller-->
         <scene sceneID="NDd-bZ-ILT">
@@ -1895,7 +1968,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="53666A3C-06A6-4DF7-A69A-F7E112EC2182" width="134" height="134">
+        <image name="2774D91C-2FCE-496E-9CA9-8357A76BCB6E" width="134" height="134">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3145,7 +3218,7 @@ AAEiXAABImQAASJnAAEibAABInsAASJ/AAEihgABIo4AASKbAAEioAABIqIAASKkAAEiqQABIrEAASK0
 AAEiuQABIsEAASLEAAEi1gABItkAASLeAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAABIuA
 </mutableData>
         </image>
-        <image name="99769EBD-CC1B-4592-908E-7B82156835B7" width="134" height="134">
+        <image name="9AA2A535-0891-41A8-BAAE-3030EBAB50B6" width="134" height="134">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

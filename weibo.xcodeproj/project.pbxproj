@@ -22,6 +22,8 @@
 		CC6E00D41D61B8ED00D5C6DC /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6E00D21D61B87100D5C6DC /* AlamofireObjectMapper.framework */; };
 		CC6E00D61D61C19F00D5C6DC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E00D51D61C19F00D5C6DC /* BaseController.swift */; };
 		CC6E00D81D61C9AB00D5C6DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E00D71D61C9AB00D5C6DC /* User.swift */; };
+		CC6E01DB1D7945F30015C2F1 /* ImageCheckerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E01DA1D7945F30015C2F1 /* ImageCheckerController.swift */; };
+		CC6E01DD1D7946A50015C2F1 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E01DC1D7946A50015C2F1 /* ImageCell.swift */; };
 		CC7E290E1D5F02C400B74EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E290D1D5F02C400B74EA2 /* AppDelegate.swift */; };
 		CC7E29151D5F02C400B74EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7E29131D5F02C400B74EA2 /* Main.storyboard */; };
 		CC7E29171D5F02C400B74EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7E29161D5F02C400B74EA2 /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		CC6E00D21D61B87100D5C6DC /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/weibo-besjumjcnmtkzbeodggfkkeiyoer/Build/Products/Debug-iphoneos/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		CC6E00D51D61C19F00D5C6DC /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		CC6E00D71D61C9AB00D5C6DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CC6E01DA1D7945F30015C2F1 /* ImageCheckerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCheckerController.swift; sourceTree = "<group>"; };
+		CC6E01DC1D7946A50015C2F1 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		CC7E290A1D5F02C400B74EA2 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7E290D1D5F02C400B74EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC7E29141D5F02C400B74EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				CC7E29461D5F0C7600B74EA2 /* MainPageViewController.swift */,
 				CC0DD5641D6049EA00BF6FF5 /* LoginViewController.swift */,
 				CC80EA391D6AA0C50013CBF5 /* CommentDetailController.swift */,
+				CC6E01DA1D7945F30015C2F1 /* ImageCheckerController.swift */,
+				CC6E01DC1D7946A50015C2F1 /* ImageCell.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				CC7E295B1D5F1C9600B74EA2 /* PublishMessageViewController.swift in Sources */,
 				CC5F88121D66E9AA00E3780F /* FriendsCell.swift in Sources */,
 				CC80EA421D6AFA440013CBF5 /* MBProgressHUD.m in Sources */,
+				CC6E01DB1D7945F30015C2F1 /* ImageCheckerController.swift in Sources */,
 				CC7E29551D5F12AE00B74EA2 /* UIView+IBInspect.m in Sources */,
 				CC6E00D61D61C19F00D5C6DC /* BaseController.swift in Sources */,
 				CC7E295E1D5F2FA700B74EA2 /* BaseTabBarController.swift in Sources */,
@@ -643,6 +650,7 @@
 				CC7E29541D5F12AE00B74EA2 /* UIView+Geometry.m in Sources */,
 				CC7E294B1D5F118100B74EA2 /* ContentCell.swift in Sources */,
 				CC5F88101D66E96000E3780F /* FriendsListController.swift in Sources */,
+				CC6E01DD1D7946A50015C2F1 /* ImageCell.swift in Sources */,
 				CC6E00D11D61B57300D5C6DC /* Messages.swift in Sources */,
 				CC80EA3C1D6ADC7D0013CBF5 /* Comment.swift in Sources */,
 				CC99FE4C1D6D3D0D00855172 /* ImageContainerView.swift in Sources */,

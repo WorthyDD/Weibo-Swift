@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
             updateUIWithUser(user!)
             friendsView.userInteractionEnabled = false
             statusesView.userInteractionEnabled = false
-            followersView.userInteractionEnabled = false
+//            followersView.userInteractionEnabled = false
         }
         else{
             getUserInfo()
@@ -48,11 +48,11 @@ class ProfileViewController: UIViewController {
             let tap2 = UITapGestureRecognizer(target: self, action: #selector(didTapFriendsView(_:)))
             friendsView.userInteractionEnabled = true
             friendsView.addGestureRecognizer(tap2)
-            let tap3 = UITapGestureRecognizer(target: self, action: #selector(didTapStatuesView(_:)))
-            statusesView.userInteractionEnabled = true
-            statusesView.addGestureRecognizer(tap3)
+            
         }
-        
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(didTapStatuesView(_:)))
+        statusesView.userInteractionEnabled = true
+        statusesView.addGestureRecognizer(tap3)
         iconButton.addTarget(self, action: #selector(didTapIconButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
@@ -166,6 +166,7 @@ class ProfileViewController: UIViewController {
         
         let mainPageVC = self.storyboard?.instantiateViewControllerWithIdentifier(mainPageSBID) as! MainPageViewController
         mainPageVC.entry = 1
+        mainPageVC.user = self.user == nil ? ShareManager.shareInstance.user : self.user
         mainPageVC.hidesBottomBarWhenPushed = true
         mainPageVC.automaticallyAdjustsScrollViewInsets = true
         self.navigationController?.pushViewController(mainPageVC, animated: true)

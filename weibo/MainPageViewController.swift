@@ -19,7 +19,8 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     private var messages:Messages!
-    var entry = 0;       //入口, 0--默认主页   1--从个人中心查看自己发的微博
+    var entry = 0;       //入口, 0--默认主页   1--从个人中心查看某人发的微博
+    var user : User?
     lazy var refreshControl = UIRefreshControl()
     var currentPage = 1
     override func viewDidLoad() {
@@ -80,14 +81,18 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         }
         currentPage = 1
         var urlString = ""
+        var params : [String : AnyObject]
         if entry == 1{
             urlString = "https://api.weibo.com/2/statuses/user_timeline.json"
+            params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!,
+                      "uid" : String(user!.id!)]
         }
         else{
             urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+            params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!]
         }
         
-        let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!]
+        
         if loading{
             SVProgressHUD.show()
         }
@@ -130,7 +135,10 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         currentPage += 1
         var urlString = ""
         if entry == 1{
-            urlString = "https://api.weibo.com/2/statuses/user_timeline.json"
+//            此接口最多只返回最新的5条数据，官方移动SDK调用可返回10条；
+
+//            urlString = "https://api.weibo.com/2/statuses/user_timeline.json"
+            return
         }
         else{
             urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"

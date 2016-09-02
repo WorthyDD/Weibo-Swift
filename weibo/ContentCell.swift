@@ -23,6 +23,7 @@ class ContentCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageContainerHeight: NSLayoutConstraint!
+
     weak var controller : MainPageViewController?
     var msg : Message?
     
@@ -71,6 +72,7 @@ class ContentCell: UITableViewCell {
                 iv.clipsToBounds = true
                 iv.contentMode = UIViewContentMode.ScaleAspectFill
                 iv.frame = CGRectMake(x+gap, y+gap, width-gap*2, width-gap*2)
+                iv.tag = i
                 imageContainer.addSubview(iv)
                 iv.userInteractionEnabled = true
                 let tap = UITapGestureRecognizer(target: self, action: #selector(ContentCell.didTapImage(_:)))
@@ -82,6 +84,14 @@ class ContentCell: UITableViewCell {
     
     
     func didTapImage(tap : UITapGestureRecognizer){
+        
+        
+        let vc = controller?.storyboard?.instantiateViewControllerWithIdentifier("ImageCheckerController") as! ImageCheckerController
+        vc.images = msg?.picUrls
+        vc.index = tap.view!.tag        //序号
+        controller?.navigationController?.pushViewController(vc, animated: true)
+        
+        /*
         let iv = tap.view as! UIImageView
         let ivLarge = UIImageView()
         ivLarge.frame = CGRectMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 0, 0)
@@ -97,7 +107,7 @@ class ContentCell: UITableViewCell {
             ivLarge.frame = UIScreen.mainScreen().bounds
             }) { (true) in
                 
-        }
+        }*/
     }
     
     func touchImageLarge(tap : UITapGestureRecognizer){
