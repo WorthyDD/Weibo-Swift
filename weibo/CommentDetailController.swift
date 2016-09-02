@@ -202,4 +202,10 @@ class CommentDetailController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    //回收键盘
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.editTextField.resignFirstResponder()
+    }
+    
 }

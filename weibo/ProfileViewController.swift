@@ -70,7 +70,9 @@ class ProfileViewController: UIViewController {
 //                user as User!
                 self.user = user
                 ShareManager.shareInstance.user = user
-                self.updateUIWithUser(user)
+                if user.userName != nil{
+                    self.updateUIWithUser(user)
+                }
             }
             
         }

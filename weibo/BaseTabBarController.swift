@@ -67,11 +67,16 @@ class BaseTabBarController: UITabBarController ,UIImagePickerControllerDelegate,
 //                            })
 
         }
+        let text = UIAlertAction(title: "text", style: UIAlertActionStyle.Default) { (action) in
+            let publishVC = self.storyboard?.instantiateViewControllerWithIdentifier(publishMessageSBID) as! PublishMessageViewController
+            self.presentViewController(publishVC, animated: true, completion: nil)
+        }
         let cancleAction = UIAlertAction(title: "cancle", style: UIAlertActionStyle.Cancel) { (action) in
             
         }
         alertVC.addAction(camera)
         alertVC.addAction(album)
+        alertVC.addAction(text)
         alertVC.addAction(cancleAction)
         self.presentViewController(alertVC, animated: true) { 
             

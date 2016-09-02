@@ -196,6 +196,11 @@ class PublishMessageViewController: UIViewController , UITextViewDelegate{
     }
     
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        self.textView.resignFirstResponder()
+    }
+    
     //MARK: textview delegate
     
     func textViewDidChange(textView: UITextView) {

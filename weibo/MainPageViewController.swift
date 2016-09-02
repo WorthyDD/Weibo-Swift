@@ -33,7 +33,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         //个人发的微博
         if entry == 1{
             self.title = "Mine Statuses"
-            loadData()
+            loadData(true)
             self.navigationItem.rightBarButtonItem = nil
         }
         else{
@@ -44,7 +44,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
             if expireDate != nil &&  expireDate!.compare(NSDate()) == NSComparisonResult.OrderedDescending{
                 print("未过期")
                 self.getUserInfo()
-                self.loadData()
+                self.loadData(true)
                 
             }
             else{
@@ -62,7 +62,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     func didGetLoginSuccessNotification(notifi : NSNotification){
         print("login success!!")
         self.getUserInfo()
-        self.loadData()
+        self.loadData(true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,7 +73,7 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     
     
     //get weibo messages from main page
-    func loadData(){
+    func loadData(loading : Bool){
         
         if ShareManager.shareInstance.userAccount.accessToken == nil{
             return
@@ -88,9 +88,13 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
         }
         
         let params = ["access_token" : ShareManager.shareInstance.userAccount.accessToken!]
-        SVProgressHUD.show()
+        if loading{
+            SVProgressHUD.show()
+        }
         Alamofire.request(.GET, urlString, parameters: params).responseObject{ (response : Response<Messages, NSError>) in
-            SVProgressHUD.dismiss()
+            if loading{
+                SVProgressHUD.dismiss()
+            }
             self.refreshControl.endRefreshing()
             if let messages = response.result.value{
                 print("\n\nresponseObject : \(messages)")
@@ -108,6 +112,11 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
                 }
                 
                 self.tableView .reloadData()
+                if loading{
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.tableView.reloadData()
+                    })
+                }
             }
             
         }
@@ -170,7 +179,10 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
                 print("\nuserObject : \(user)")
                 //                user as User!
                 ShareManager.shareInstance.user = user
-                self.title = user.userName!
+                guard let name = user.userName else{
+                    return
+                }
+                self.title = name
             }
             
         }
@@ -185,15 +197,21 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages==nil ? 0 : (messages.statuses?.count)!
+        
+        if messages == nil || messages.statuses == nil{
+            return 0
+        }
+        return messages.statuses!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ContentCell
         cell.controller = self
-        let message = messages.statuses?[indexPath.row]
-        cell.updateCell(message!)
+        guard let message = messages.statuses?[indexPath.row] else{
+            return cell;
+        }
+        cell.updateCell(message)
         return cell;
     }
     
@@ -229,6 +247,6 @@ class MainPageViewController: BaseController, UITableViewDataSource, UITableView
     
     //notification
     func didGetDataChangeNotification(notification : NSNotification){
-        loadData()
+        loadData(true)
     }
 }

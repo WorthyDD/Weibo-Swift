@@ -166,7 +166,7 @@
                                                             <variation key="widthClass=compact" constant="40"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <state key="normal" image="770582F0-535B-4DA6-9202-1553D4510459"/>
+                                                    <state key="normal" image="99769EBD-CC1B-4592-908E-7B82156835B7"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                             <real key="value" value="20"/>
@@ -577,7 +577,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="Joo-Wt-ZZ9">
-                        <barButtonItem key="rightBarButtonItem" title="login" id="vin-TY-vi8">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="vin-TY-vi8">
                             <color key="tintColor" red="1" green="0.46754895670000002" blue="0.406071185" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapLogin:" destination="2Fr-00-oBD" id="SWJ-Qk-bbV"/>
@@ -627,7 +627,7 @@
                                                             <variation key="widthClass=compact" constant="40"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <state key="normal" image="7FE61B6A-137A-4EB2-A83A-FC36C17FAD16"/>
+                                                    <state key="normal" image="53666A3C-06A6-4DF7-A69A-F7E112EC2182"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                             <real key="value" value="20"/>
@@ -1082,17 +1082,17 @@
                                 <exclude reference="hJb-Rb-57d"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="onT-bg-stO"/>
+                                <exclude reference="r7l-8E-kbw"/>
                                 <exclude reference="AYC-u8-TvA"/>
                                 <exclude reference="XSd-XA-avR"/>
                                 <exclude reference="tD3-gy-tKi"/>
-                                <exclude reference="437-tf-udh"/>
-                                <exclude reference="mS0-gc-h0Z"/>
-                                <exclude reference="zJ2-uc-nz1"/>
                                 <exclude reference="1Q6-hA-VJH"/>
                                 <exclude reference="7AF-Dl-RDa"/>
                                 <exclude reference="nct-hO-LZn"/>
-                                <exclude reference="onT-bg-stO"/>
-                                <exclude reference="r7l-8E-kbw"/>
+                                <exclude reference="437-tf-udh"/>
+                                <exclude reference="mS0-gc-h0Z"/>
+                                <exclude reference="zJ2-uc-nz1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1103,17 +1103,17 @@
                                 <include reference="hJb-Rb-57d"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="onT-bg-stO"/>
+                                <include reference="r7l-8E-kbw"/>
                                 <include reference="AYC-u8-TvA"/>
                                 <include reference="XSd-XA-avR"/>
                                 <include reference="tD3-gy-tKi"/>
-                                <include reference="437-tf-udh"/>
-                                <include reference="mS0-gc-h0Z"/>
-                                <include reference="zJ2-uc-nz1"/>
                                 <include reference="1Q6-hA-VJH"/>
                                 <include reference="7AF-Dl-RDa"/>
                                 <include reference="nct-hO-LZn"/>
-                                <include reference="onT-bg-stO"/>
-                                <include reference="r7l-8E-kbw"/>
+                                <include reference="437-tf-udh"/>
+                                <include reference="mS0-gc-h0Z"/>
+                                <include reference="zJ2-uc-nz1"/>
                             </mask>
                         </variation>
                     </view>
@@ -1895,7 +1895,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="770582F0-535B-4DA6-9202-1553D4510459" width="134" height="134">
+        <image name="53666A3C-06A6-4DF7-A69A-F7E112EC2182" width="134" height="134">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3145,7 +3145,7 @@ AAEiXAABImQAASJnAAEibAABInsAASJ/AAEihgABIo4AASKbAAEioAABIqIAASKkAAEiqQABIrEAASK0
 AAEiuQABIsEAASLEAAEi1gABItkAASLeAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAABIuA
 </mutableData>
         </image>
-        <image name="7FE61B6A-137A-4EB2-A83A-FC36C17FAD16" width="134" height="134">
+        <image name="99769EBD-CC1B-4592-908E-7B82156835B7" width="134" height="134">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
